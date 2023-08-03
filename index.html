@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="./js.svg" type="image/x-icon" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap"
+    />
+
+    <title>Day 3 JS | Array Cardio 1</title>
+
+    <!-- tailwind cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-[url(./bg.jpg)] bg-cover font-['Audiowide'] flex justify-center items-center min-h-screen">
+    <main class="flex min-h-screen items-center justify-center">
+      <button
+        class="absolute right-0 top-3 flex items-center justify-center rounded-bl-2xl rounded-tl-2xl bg-sky-400 px-2 py-1 font-semibold transition-all hover:pr-5 z-50"
+      >
+        <img src="js.svg" width="35" height="35" alt="" />&nbsp;Day 3
+      </button>
+      <div class="array-cardio">
+        <ul class="flex flex-col gap-4 justify-center">
+          <li class="text-3xl text-white pb-3">All the Cardio Work is handled dynamically By JS</li>
+          <li class="text-xl text-white">-> See script part</li>
+          <li class="text-xl text-white">-> For solutions see console</li>
+        </ul>
+      </div>
+      <footer
+        class="font-semi-bold fixed bottom-0 left-0 rounded-tr-xl bg-sky-300 px-4 py-1 text-center text-black"
+      >
+        Made with ❤️ by Nehal.
+      </footer>
+    </main>
+
+    <!-- <p><em>Psst: have a look at the JavaScript Console</em> 💁</p> -->
+    <script>
+      // Get your shorts on - this is an array workout!
+      // ## Array Cardio Day 1
+
+      // Some data we can work with
+      const inventors = [
+        { first: "Albert", last: "Einstein", year: 1879, passed: 1955 },
+        { first: "Isaac", last: "Newton", year: 1643, passed: 1727 },
+        { first: "Galileo", last: "Galilei", year: 1564, passed: 1642 },
+        { first: "Marie", last: "Curie", year: 1867, passed: 1934 },
+        { first: "Johannes", last: "Kepler", year: 1571, passed: 1630 },
+        { first: "Nicolaus", last: "Copernicus", year: 1473, passed: 1543 },
+        { first: "Max", last: "Planck", year: 1858, passed: 1947 },
+        { first: "Katherine", last: "Blodgett", year: 1898, passed: 1979 },
+        { first: "Ada", last: "Lovelace", year: 1815, passed: 1852 },
+        { first: "Sarah E.", last: "Goode", year: 1855, passed: 1905 },
+        { first: "Lise", last: "Meitner", year: 1878, passed: 1968 },
+        { first: "Hanna", last: "Hammarström", year: 1829, passed: 1909 },
+      ];
+
+      const people = [
+        "Bernhard, Sandra",
+        "Bethea, Erin",
+        "Becker, Carl",
+        "Bentsen, Lloyd",
+        "Beckett, Samuel",
+        "Blake, William",
+        "Berger, Ric",
+        "Beddoes, Mick",
+        "Beethoven, Ludwig",
+        "Belloc, Hilaire",
+        "Begin, Menachem",
+        "Bellow, Saul",
+        "Benchley, Robert",
+        "Blair, Robert",
+        "Benenson, Peter",
+        "Benjamin, Walter",
+        "Berlin, Irving",
+        "Benn, Tony",
+        "Benson, Leana",
+        "Bent, Silas",
+        "Berle, Milton",
+        "Berry, Halle",
+        "Biko, Steve",
+        "Beck, Glenn",
+        "Bergman, Ingmar",
+        "Black, Elk",
+        "Berio, Luciano",
+        "Berne, Eric",
+        "Berra, Yogi",
+        "Berry, Wendell",
+        "Bevan, Aneurin",
+        "Ben-Gurion, David",
+        "Bevel, Ken",
+        "Biden, Joseph",
+        "Bennington, Chester",
+        "Bierce, Ambrose",
+        "Billings, Josh",
+        "Birrell, Augustine",
+        "Blair, Tony",
+        "Beecher, Henry",
+        "Biondo, Frank",
+      ];
+
+      // ------------------ Array.prototype.filter() ---------------------
+      // 1. Filter the list of inventors for those who were born in the 1500's
+      //   const arr = [],
+      //     temp_arr = [];
+      // ------ 1.Naive method --------
+      //   inventors.forEach(people => {
+      //     if(people.year>=1500 && people.year<1600)
+      //     arr.push(people);
+      //   });
+      //   arr.forEach(invnt => {
+      //     console.log(invnt);
+      //   });
+
+      // ------- 2.Filter Method ------
+      const filteredArray = inventors.filter((people) => {
+        if (people.year >= 1500 && people.year < 1600) return true;
+      });
+      console.table(filteredArray);
+
+      //-------------------- Array.prototype.map() -----------------------
+      // 2. Give us an array of the inventors first and last names
+      // ------- 1. Naive method -----
+      //   let i = 0;
+      //   inventors.forEach((people) => {
+      //     arr.push(`${people.first} ${people.last}`);
+      //   });
+      //   arr.forEach((invnt) => {
+      //     console.log(invnt);
+      //   });
+
+      // ------ 2. Map method -------
+      const name = inventors.map((people) => {
+        return `${people.first} ${people.last}`;
+      });
+      console.table(name);
+
+      // -------------------- Array.prototype.sort() --------------------
+      //   3. Sort the inventors by birthdate, oldest to youngest
+      const sortOnBirthDate = inventors.sort((a, b) => {
+        a.year > b.year ? 1 : -1;
+      });
+      console.table(sortOnBirthDate);
+
+      // Array.prototype.reduce()
+      // 4. How many years did all the inventors live all together?
+
+      // ------- 1. Naive method -----
+      //   let getInventorsLife = ()=>{
+      //     let count = 0;
+      //     inventors.forEach((people) => {
+      //     count += people.passed - people.year;
+      //   });
+      //   return count;
+      //   }
+      //   console.log(getInventorsLife);
+
+      // ------- 2. Reduce method -----
+      let getInventorsLife = inventors.reduce((count, people) => {
+        count += people.passed - people.year;
+        return count;
+      }, 0);
+
+      console.log(getInventorsLife);
+
+      // 5. Sort the inventors by years lived
+      const sortOnYearsLived = inventors.sort((a, b) => {
+        const c = a.passed - a.year;
+        const d = b.passed - b.year;
+        return c > d ? -1 : 1;
+      });
+      console.table(sortOnYearsLived);
+
+      // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
+      // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+      //   const arr = document.querySelector(".mw-category"),
+      //     links = [...arr.querySelectorALl("a")];
+
+      //   const de = links
+      //     .map((link) => link.textContent)
+      //     .filter((word) => word.includes("de"));
+      //   console.log(de);
+
+      // 7. sort Exercise
+      // Sort the people alphabetically by last name
+      const peopleSort = people.sort((a, b) => {
+        const [x1, y1] = a.split(",");
+        const [x2, y2] = b.split(",");
+        return y1 > y2 ? 1 : -1;
+      });
+      console.table(peopleSort);
+
+      // 8. Reduce Exercise
+      // Sum up the instances of each of these
+      const data = [
+        "car",
+        "car",
+        "truck",
+        "truck",
+        "bike",
+        "walk",
+        "car",
+        "van",
+        "bike",
+        "walk",
+        "car",
+        "van",
+        "car",
+        "truck",
+      ];
+
+      const transportation = data.reduce((obj, item) => {
+        if (!obj[item]) obj[item] = 0;
+        obj[item]++;
+        return obj;
+      }, {});
+    </script>
+  </body>
+</html>
