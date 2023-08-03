@@ -3,8 +3,8 @@
  
 ### 🔗 Links
 
-- Solution URL: [Click here]()
-- Live Site URL: [Click here]()
+- Solution URL: [Click here](https://github.com/NehalSahu8055/Day-3-Array-Cardio-1)
+- Live Site URL: [Click here](https://array-cardio-1-nehal.netlify.app/)
 
 
 ### 🛠️ Built with
