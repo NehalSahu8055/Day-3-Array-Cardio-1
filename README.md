@@ -1,5 +1,5 @@
 
-#  <img src="https://www.freepnglogos.com/uploads/javascript-png/javascript-vector-logo-yellow-png-transparent-javascript-vector-12.png" width="25"/> Day 2 -  Array Cardio 1
+#  <img src="https://www.freepnglogos.com/uploads/javascript-png/javascript-vector-logo-yellow-png-transparent-javascript-vector-12.png" width="25"/> Day 3 -  Array Cardio 1
  
 ### 🔗 Links
 
